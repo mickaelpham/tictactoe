@@ -51,5 +51,55 @@ module Tictactoe
         end
       end
     end
+
+    describe "#won?" do
+      context "when the board is empty" do
+        it "returns false" do
+          expect(a_game.won?).to be(false)
+        end
+      end
+
+      context "when the game is not over" do
+        before do
+          a_game.board = [
+            nil, "O", "X",
+            nil, "O", nil,
+            "X", nil, "X"
+          ]
+        end
+
+        it "returns false" do
+          expect(a_game.won?).to be(false)
+        end
+      end
+
+      context "when a player won" do
+        before do
+          a_game.board = [
+            nil, nil, "X",
+            nil, "X", nil,
+            "X", nil, nil
+          ]
+        end
+
+        it "returns true" do
+          expect(a_game.won?).to be(true)
+        end
+      end
+
+      context "when the board is full but nobody won" do
+        before do
+          a_game.board = [
+            "X", "O", "X",
+            "X", "O", "O",
+            "O", "X", "X"
+          ]
+        end
+
+        it "returns false" do
+          expect(a_game.won?).to be(false)
+        end
+      end
+    end
   end
 end
