@@ -14,11 +14,16 @@ module Tictactoe
       [2, 4, 6]
     ].freeze
 
-    attr_accessor :current_player, :board
+    attr_accessor :board, :current_player
 
     def initialize
       @board = []
       @current_player = "X"
+    end
+
+    def turn(position)
+      place_token(position)
+      self.current_player = next_player unless won? || over?
     end
 
     def won?
@@ -31,11 +36,25 @@ module Tictactoe
       false
     end
 
+    def over?
+      (0...BOARD_SIZE).each do |i|
+        return false if board[i].nil?
+      end
+
+      true
+    end
+
+    private
+
     def place_token(position)
       raise ErrTokenOutOfPosition if position.negative? || position >= BOARD_SIZE
       raise ErrTokenAlreadyPresent unless board[position].nil?
 
       board[position] = current_player
+    end
+
+    def next_player
+      current_player == "X" ? "O" : "X"
     end
   end
 end
