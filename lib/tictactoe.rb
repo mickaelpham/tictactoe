@@ -1,8 +1,13 @@
 # frozen_string_literal: true
 
-require_relative "tictactoe/version"
+require "zeitwerk"
+loader = Zeitwerk::Loader.for_gem
+loader.setup
 
 module Tictactoe
   class Error < StandardError; end
-  # Your code goes here...
+
+  class ErrTokenAlreadyPresent < Error; end
+
+  class ErrTokenOutOfPosition < Error; end
 end
