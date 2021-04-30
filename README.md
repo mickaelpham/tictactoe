@@ -13,9 +13,29 @@ interactions through the command line.
 This means it would be possible to spin up an HTTP server and reuse the
 `Tictactoe::Game` while handling a completely different I/O source.
 
-### CLI
+### CLI Usage
 
 Start a new game using the command line and running the `bin/game` executable.
+
+### HTTP Usage
+
+Start a new game by running a web server:
+
+```sh
+rackup -p 4567
+```
+
+Get the current stage of the game:
+
+```sh
+curl http://localhost:4567/game -v
+```
+
+Add a token to the board:
+
+```sh
+curl -X POST http://localhost:4567/game -d '{"position": 2}' -v
+```
 
 ## Contributing
 
@@ -32,3 +52,7 @@ The gem is available as open source under the terms of the
 This repository is inspired by
 [Learn Go with tests](https://quii.gitbook.io/learn-go-with-tests/build-an-application/command-line)
 which is a great resource to learn Go.
+
+```
+
+```
