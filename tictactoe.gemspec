@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email = ["inbox@mickael.dev"]
 
   spec.summary = "Playing a childhood game"
-  spec.homepage = "https://gitlab.com/mickaelpham/tictactoe"
+  spec.homepage = "https://github.com/mickaelpham/tictactoe"
   spec.license = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.6")
 

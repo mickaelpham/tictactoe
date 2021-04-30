@@ -1,39 +1,34 @@
-# Tictactoe
+# Tic Tac Toe
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/tictactoe`. To experiment with that code, run `bin/console` for an interactive prompt.
+This is just a toy repository where I practice my Ruby improved knowledge after
+learning more about [Go](https://golang.org/). It is true that learning
+different programming languages let you improve your overall programming skills.
 
-TODO: Delete this and the text above, and describe your gem
+## Architecture
 
-## Installation
+The logic is separated from the display. There is a `Tictactoe::Game` class that
+focuses solely on the game logic, while `Tictactoe::CLI` handles user
+interactions through the command line.
 
-Add this line to your application's Gemfile:
+This means it would be possible to spin up an HTTP server and reuse the
+`Tictactoe::Game` while handling a completely different I/O source.
 
-```ruby
-gem 'tictactoe'
-```
+### CLI
 
-And then execute:
-
-    $ bundle install
-
-Or install it yourself as:
-
-    $ gem install tictactoe
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+Start a new game using the command line and running the `bin/game` executable.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/tictactoe.
+Bug reports and pull requests are welcome on GitHub at
+[mickaelpham/tictactoe](https://github.com/mickaelpham/tictactoe).
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+The gem is available as open source under the terms of the
+[MIT License](https://opensource.org/licenses/MIT).
+
+## Credits
+
+This repository is inspired by
+[Learn Go with tests](https://quii.gitbook.io/learn-go-with-tests/build-an-application/command-line)
+which is a great resource to learn Go.
