@@ -5,7 +5,7 @@ RSpec.describe Tictactoe::Game do
 
   context "when started" do
     it "has an empty board" do
-      empty_board = []
+      empty_board = Array.new(described_class::BOARD_SIZE)
 
       expect(a_game.board).to eq(empty_board)
     end
