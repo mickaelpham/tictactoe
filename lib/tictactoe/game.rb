@@ -17,7 +17,7 @@ module Tictactoe
     attr_accessor :board, :current_player
 
     def initialize
-      @board = []
+      @board = Array.new(BOARD_SIZE)
       @current_player = "X"
     end
 

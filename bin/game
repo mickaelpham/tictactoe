@@ -3,6 +3,6 @@
 
 require "bundler/setup"
 require "tictactoe"
-require "irb"
 
-IRB.start(__FILE__)
+cli = Tictactoe::CLI.new
+cli.run
