@@ -10,8 +10,10 @@ The logic is separated from the display. There is a `Tictactoe::Game` class that
 focuses solely on the game logic, while `Tictactoe::CLI` handles user
 interactions through the command line.
 
-This means it would be possible to spin up an HTTP server and reuse the
-`Tictactoe::Game` while handling a completely different I/O source.
+This means it is possible to spin up an HTTP server and reuse the
+`Tictactoe::Game` while handling a completely different I/O source. This is
+where `Tictactoe::Server` comes in play with a quick
+[Sinatra](http://sinatrarb.com/) application.
 
 ### CLI Usage
 
@@ -52,7 +54,3 @@ The gem is available as open source under the terms of the
 This repository is inspired by
 [Learn Go with tests](https://quii.gitbook.io/learn-go-with-tests/build-an-application/command-line)
 which is a great resource to learn Go.
-
-```
-
-```
